@@ -1,1 +1,204 @@
-/* Caso queira utilizar framework como Bootstrap para estilização, pode utilizar. Basta ignoar esse arquivo */
+:root {
+  --bg:        #181012;
+  --surface:   #101216;
+  --border:    #f5f7ff;
+  --accent:    #3094ce;
+  --accent-dk: #e9f4f8;
+  --text:      #e8eaf0;
+  --muted:     #4e97b4;
+  --success:   #1ddd87;
+  --error:     #ee2222;
+  --radius:    6px;
+  --font-ui:   "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Mono", monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  border-bottom: 2px solid var(--accent);
+  padding: 20px 0 16px;
+  text-align: center;
+}
+
+.header-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.header-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: 0.06em;
+}
+
+main {
+  max-width: 720px;
+  margin: 36px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 28px 24px;
+}
+
+.card h2 {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus {
+  border-color: var(--accent);
+}
+
+input::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+#btn-cadastrar {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  background: var(--accent);
+  color: #0f1117;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+#btn-cadastrar:hover  { background: var(--accent-dk); }
+#btn-cadastrar:active { transform: scale(0.98); }
+
+.feedback {
+  margin-top: 12px;
+  font-size: 13px;
+  min-height: 18px;
+}
+
+.feedback.success { color: var(--success); }
+.feedback.error   { color: var(--error); }
+.feedback.info    { color: var(--muted); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 12px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+thead th:first-child { width: 48px; }
+thead th:last-child  { width: 120px; text-align: right; }
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover      { background: rgba(240, 165, 0, 0.04); }
+
+tbody td {
+  padding: 11px 12px;
+  color: var(--text);
+}
+
+tbody td:first-child {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+tbody td:last-child { text-align: right; }
+
+.empty-row td {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  padding: 24px;
+}
+
+.empty-row.error td { color: var(--error); }
+
+@media (max-width: 480px) {
+  .card { padding: 20px 16px; }
+  header h1 { font-size: 1.5rem; }
+}
