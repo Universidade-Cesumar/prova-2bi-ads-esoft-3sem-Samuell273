@@ -2,12 +2,11 @@
 
 const API_URL = "https://6a29e97ff59cb8f65f1dc47a.mockapi.io/:endpoint"
 
-// ── Helpers ────────────────────────────────────────────────────────────────
 
 function setFeedback(msg, type = "info") {
   const el = document.getElementById("feedback");
   el.textContent = msg;
-  el.className = feedback ${type};
+  el.className = `feedback ${type}`;
 }
 
 function renderMateriais(materiais) {
@@ -30,8 +29,6 @@ function renderMateriais(materiais) {
   });
 }
 
-// ── GET – carrega ao iniciar ────────────────────────────────────────────────
-
 async function carregarMateriais() {
   try {
     const res = await fetch(API_URL);
@@ -45,7 +42,6 @@ async function carregarMateriais() {
   }
 }
 
-// ── POST – cadastra ao clicar ───────────────────────────────────────────────
 
 document.getElementById("btn-cadastrar").addEventListener("click", async () => {
   const nome = document.getElementById("input-nome").value.trim();
@@ -78,6 +74,5 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
   }
 });
 
-// ── Init ───────────────────────────────────────────────────────────────────
 
 carregarMateriais();
