@@ -32,7 +32,7 @@ function renderMateriais(materiais) {
 async function carregarMateriais() {
   try {
     const res = await fetch(API_URL);
-    if (!res.ok) throw new Error(HTTP ${res.status});
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     renderMateriais(data);
   } catch (err) {
@@ -61,7 +61,7 @@ document.getElementById("btn-cadastrar").addEventListener("click", async () => {
       body: JSON.stringify({ nome, quantidade: Number(quantidade) }),
     });
 
-    if (!res.ok) throw new Error(HTTP ${res.status});
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     setFeedback("Material cadastrado com sucesso!", "success");
     document.getElementById("input-nome").value = "";
