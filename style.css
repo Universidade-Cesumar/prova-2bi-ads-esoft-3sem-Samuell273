@@ -262,3 +262,20 @@ thead th:nth-child(4),
 thead th:nth-child(5),
 tbody td:nth-child(4),
 tbody td:nth-child(5) { text-align: center; }
+
+/* ── Dashboard strip ──*/
+.dashboard-strip { ... }
+.dash-stat { ... }
+.dash-value { color: var(--accent); }
+.critical-count { color: var(--amber); }  /* contador crítico em âmbar */
+
+/* ── Estoque crítico ──*/
+tr.estoque-critico { background: rgba(255,176,64,0.04); }
+.badge-critico { ... color: var(--amber); }
+
+/* ── Qty pill variante baixa ──*/
+.qty-pill--low { color: var(--amber); border-color: var(--amber-border); }
+
+/* ── Search wrap ──*/
+.search-wrap input { ... }
+.list-header { display: flex; justify-content: space-between; ... }
