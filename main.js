@@ -1,4 +1,4 @@
-const API_URL = "https://SEU-ID.mockapi.io/materiais";
+const API_URL = "https://6a29e97ff59cb8f65f1dc47a.mockapi.io/materiais";
 
 // Cache local dos materiais para filtro sem nova requisição
 let materiaisCache = [];
